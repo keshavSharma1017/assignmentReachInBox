@@ -1,0 +1,185 @@
+.reply-composer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.reply-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reply-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.close-btn:hover {
+  color: var(--color-error-500);
+}
+
+.reply-form {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.reply-recipient,
+.reply-subject {
+  display: flex;
+  align-items: center;
+}
+
+.reply-recipient label,
+.reply-subject label {
+  width: 60px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.reply-recipient input,
+.reply-subject input {
+  flex: 1;
+  border: none;
+  padding: var(--spacing-1);
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.reply-editor {
+  position: relative;
+  margin: var(--spacing-2) 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Quill editor overrides */
+.quill {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.ql-editor {
+  min-height: 150px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
+}
+
+.ql-toolbar {
+  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--background-tertiary);
+}
+
+.reply-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.send-btn {
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-primary-500);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+
+.send-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-600);
+}
+
+.discard-btn {
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.discard-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+.variables-popup {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 200px;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  z-index: 100;
+}
+
+.variables-popup h4 {
+  padding: var(--spacing-2) var(--spacing-3);
+  margin: 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+}
+
+.variables-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.variables-list li {
+  padding: var(--spacing-2) var(--spacing-3);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.variables-list li:hover {
+  background-color: var(--hover-bg);
+  color: var(--color-primary-500);
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.reply-composer {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quill {
+    height: 150px;
+  }
+  
+  .ql-editor {
+    min-height: 100px;
+  }
+}

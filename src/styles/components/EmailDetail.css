@@ -1,0 +1,197 @@
+.email-detail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--background-secondary);
+}
+
+.email-detail-header {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.email-detail-subject h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.email-detail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.reply-btn,
+.forward-btn,
+.delete-btn {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.reply-btn:hover,
+.forward-btn:hover {
+  background-color: var(--hover-bg);
+  color: var(--color-primary-500);
+}
+
+.delete-btn:hover {
+  background-color: var(--hover-bg);
+  color: var(--color-error-500);
+}
+
+.reply-btn span,
+.forward-btn span,
+.delete-btn span {
+  margin-left: var(--spacing-1);
+}
+
+.secondary-actions {
+  position: relative;
+}
+
+.more-options-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.more-options-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+.options-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  z-index: 10;
+  margin-top: var(--spacing-1);
+}
+
+.options-dropdown ul {
+  padding: var(--spacing-1) 0;
+}
+
+.options-dropdown li {
+  padding: var(--spacing-2) var(--spacing-3);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.options-dropdown li:hover {
+  background-color: var(--hover-bg);
+}
+
+.email-detail-meta {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sender-info {
+  display: flex;
+  align-items: center;
+}
+
+.sender-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  margin-right: var(--spacing-2);
+}
+
+.sender-details {
+  flex: 1;
+}
+
+.sender-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-1);
+}
+
+.sender-name {
+  font-weight: 500;
+}
+
+.email-date {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.recipient-info {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.recipient {
+  color: var(--text-secondary);
+}
+
+.email-detail-body {
+  flex: 1;
+  padding: var(--spacing-3);
+  overflow-y: auto;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.email-detail-footer {
+  padding: var(--spacing-3);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.options-dropdown {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .email-detail-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+  
+  .secondary-actions {
+    align-self: flex-end;
+  }
+}

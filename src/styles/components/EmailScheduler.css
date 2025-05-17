@@ -1,0 +1,145 @@
+.email-scheduler {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90vw;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.scheduler-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background-tertiary);
+}
+
+.scheduler-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary-500);
+}
+
+.scheduler-form {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.form-row label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-row input,
+.form-row select {
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: var(--color-primary-500);
+  outline: none;
+}
+
+.smart-timing {
+  margin-top: var(--spacing-2);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-3);
+}
+
+.smart-timing h4 {
+  margin: 0 0 var(--spacing-2) 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.timing-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.timing-option {
+  padding: var(--spacing-2);
+  background-color: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.timing-option:hover {
+  background-color: var(--color-primary-50);
+  border-color: var(--color-primary-300);
+  color: var(--color-primary-700);
+}
+
+.scheduler-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--border-color);
+}
+
+.schedule-btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-primary-500);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+
+.schedule-btn:hover {
+  background-color: var(--color-primary-600);
+}
+
+.cancel-btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.cancel-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.email-scheduler {
+  animation: fadeInScale 0.3s ease-out;
+}

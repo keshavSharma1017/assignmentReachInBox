@@ -1,0 +1,76 @@
+.onebox-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.onebox-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.email-detail-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-left: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.no-email-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-tertiary);
+  padding: var(--spacing-4);
+  text-align: center;
+}
+
+.no-email-selected p {
+  margin-bottom: var(--spacing-2);
+  font-size: 1.1rem;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.email-detail {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .onebox-content {
+    flex-direction: column;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .email-detail-container {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+}

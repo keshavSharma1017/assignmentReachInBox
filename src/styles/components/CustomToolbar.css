@@ -1,0 +1,93 @@
+.custom-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--background-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-1) 0;
+}
+
+.ql-formats {
+  margin-right: var(--spacing-2) !important;
+}
+
+.custom-buttons {
+  margin-left: auto !important;
+}
+
+.custom-button {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  margin-right: var(--spacing-1);
+}
+
+.save-btn {
+  background-color: var(--color-success-500);
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: var(--color-success-500);
+  opacity: 0.9;
+}
+
+.variables-btn {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.variables-btn:hover {
+  background-color: var(--color-primary-600);
+}
+
+/* Override Quill button styles for better theme integration */
+.ql-toolbar button {
+  color: var(--text-primary) !important;
+}
+
+.ql-toolbar button:hover {
+  color: var(--color-primary-500) !important;
+}
+
+.ql-toolbar button.ql-active {
+  color: var(--color-primary-500) !important;
+}
+
+.ql-toolbar .ql-stroke {
+  stroke: var(--text-primary) !important;
+}
+
+.ql-toolbar button:hover .ql-stroke,
+.ql-toolbar button.ql-active .ql-stroke {
+  stroke: var(--color-primary-500) !important;
+}
+
+.ql-toolbar .ql-fill {
+  fill: var(--text-primary) !important;
+}
+
+.ql-toolbar button:hover .ql-fill,
+.ql-toolbar button.ql-active .ql-fill {
+  fill: var(--color-primary-500) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .ql-formats {
+    margin: var(--spacing-1) !important;
+  }
+  
+  .custom-buttons {
+    margin: var(--spacing-1) !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

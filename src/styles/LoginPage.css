@@ -1,0 +1,136 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  padding: var(--spacing-4);
+}
+
+.login-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-toggle-position {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.logo-container {
+  margin-bottom: var(--spacing-5);
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-1);
+  color: var(--color-primary-500);
+}
+
+.app-tagline {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.login-card {
+  width: 100%;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-card h2 {
+  margin-bottom: var(--spacing-2);
+  font-size: 1.5rem;
+}
+
+.login-description {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-4);
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-2);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+  margin-bottom: var(--spacing-3);
+}
+
+.google-login-btn:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.google-login-btn.loading {
+  background-color: var(--button-primary-hover);
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: var(--spacing-2);
+}
+
+.error-message {
+  color: var(--color-error-500);
+  margin-top: var(--spacing-2);
+  text-align: center;
+}
+
+.login-footer {
+  margin-top: var(--spacing-4);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.login-footer a {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: var(--spacing-3);
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+}

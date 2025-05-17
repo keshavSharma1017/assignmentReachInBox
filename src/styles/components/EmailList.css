@@ -1,0 +1,223 @@
+.email-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-secondary);
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.email-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.select-all {
+  margin: 0;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.refresh-btn:hover {
+  background-color: var(--hover-bg);
+}
+
+.view-options {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.view-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  color: var(--text-tertiary);
+}
+
+.view-option:hover {
+  background-color: var(--hover-bg);
+}
+
+.view-option.active {
+  color: var(--color-primary-500);
+}
+
+.email-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.email-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.email-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.email-item.selected {
+  background-color: var(--selected-item-bg);
+}
+
+.email-item.unread {
+  font-weight: 500;
+}
+
+.email-item.unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+}
+
+.email-checkbox {
+  margin-right: var(--spacing-2);
+}
+
+.email-star {
+  margin-right: var(--spacing-2);
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+}
+
+.star-btn.starred {
+  color: var(--color-warning-500);
+}
+
+.email-sender {
+  width: 180px;
+  margin-right: var(--spacing-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-right: var(--spacing-2);
+}
+
+.email-subject {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.email-snippet {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-date {
+  min-width: 80px;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.email-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin-left: var(--spacing-2);
+  opacity: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  color: var(--text-tertiary);
+  padding: 0;
+}
+
+.delete-btn:hover {
+  background-color: var(--hover-bg);
+  color: var(--color-error-500);
+}
+
+/* Loading and empty states */
+.email-list.loading,
+.email-list.error,
+.email-list.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--spacing-4);
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+.retry-button {
+  margin-top: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-primary-500);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .email-sender {
+    width: 120px;
+  }
+  
+  .email-date {
+    display: none;
+  }
+}
