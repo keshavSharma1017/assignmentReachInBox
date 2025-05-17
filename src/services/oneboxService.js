@@ -9,7 +9,7 @@ const logger = {
     const sanitizedHeaders = { ...headers }
     delete sanitizedHeaders['Authorization'] // Remove sensitive info
     
-    console.group(`🌐 API Request - ${timestamp}`)
+    console.group(`API Request - ${timestamp}`)
     console.log(`${method.toUpperCase()} ${url}`)
     console.log('Headers:', sanitizedHeaders)
     if (body) console.log('Body:', body)
@@ -20,7 +20,7 @@ const logger = {
     const timestamp = new Date().toISOString()
     const truncatedData = JSON.stringify(data).slice(0, 1000) // Truncate large responses
     
-    console.group(`✨ API Response - ${timestamp}`)
+    console.group(`API Response - ${timestamp}`)
     console.log(`${method.toUpperCase()} ${url}`)
     console.log(`Status: ${status}`)
     console.log(`Duration: ${duration}ms`)
@@ -31,7 +31,7 @@ const logger = {
   logError: (method, url, error) => {
     const timestamp = new Date().toISOString()
     
-    console.group(`❌ API Error - ${timestamp}`)
+    console.group(`API Error - ${timestamp}`)
     console.log(`${method.toUpperCase()} ${url}`)
     console.log('Error:', error.message)
     if (error.response) {
