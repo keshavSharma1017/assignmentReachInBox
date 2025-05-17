@@ -93,6 +93,27 @@ The application implements detailed API logging that captures:
 - Optimized API calls
 - Debounced user interactions
 
+###Run in local server                                                              The application will be available at the provided local server URL. You can:
+
+Start the server by typin npm run dev in Visual Studio 
+server will start at localhost 
+click over the localHost link
+Log in using the Google authentication
+View your email threads in the inbox
+Read email details by clicking on a thread
+Reply to emails using the rich text editor
+Delete emails using either:
+The delete button in the email list
+The delete button in the email detail view
+The 'D' keyboard shortcut when viewing an email
+Key features available:
+
+Dark/light theme toggle
+Rich text editor with variable insertion
+Keyboard shortcuts (R for reply, D for delete)
+Comprehensive API logging in the browser console
+The application automatically handles authentication and will redirect you to the login page if needed.
+
 
 
 
