@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { login as apiLogin, logout as apiLogout } from '../services/authService.js'
+import { login as apiLogin, logout as apiLogout, handleAuthCallback } from '../services/authService.js'
 
 const AuthContext = createContext(null)
 
@@ -10,6 +10,14 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Check for auth callback first
+    const isCallback = handleAuthCallback()
+    if (isCallback) {
+      setUser({ token: localStorage.getItem('token') })
+      setLoading(false)
+      return
+    }
+
     // Check if user is already logged in
     const token = localStorage.getItem('token')
     if (token) {

@@ -13,6 +13,8 @@ export const handleAuthCallback = () => {
   
   if (token) {
     localStorage.setItem('token', token)
+    // Clean up URL
+    window.history.replaceState({}, document.title, window.location.pathname)
     return true
   }
   return false
